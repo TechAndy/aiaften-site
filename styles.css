@@ -295,44 +295,15 @@ h1 .place {
 }
 
 .when {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-areas:
-    "day weekday"
-    "day month";
-  column-gap: 0.85rem;
-  row-gap: 0.1rem;
-  justify-content: start;
-  align-items: end;
-  width: max-content;
+  display: block;
+  margin: 1.15rem 0 0;
   max-width: 100%;
-  margin: 1.1rem 0 0;
   color: var(--navy);
-}
-
-.when-day {
-  grid-area: day;
   font-family: var(--serif);
   font-weight: 560;
-  font-size: clamp(4.2rem, 14vw, 5.6rem);
-  line-height: 0.8;
-  letter-spacing: -0.03em;
-}
-
-.when-weekday {
-  grid-area: weekday;
-  align-self: end;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.when-month {
-  grid-area: month;
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  line-height: 1.1;
+  font-size: clamp(1.7rem, 4.6vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .quick {

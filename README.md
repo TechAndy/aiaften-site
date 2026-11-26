@@ -17,7 +17,7 @@ python3 -m http.server 41731
 Alt innhold for kvelden ligger i `index.html`. Søk etter `3. desember 2026` og `2026-12-03`, og oppdater:
 
 1. `<title>` og meta-beskrivelsen
-2. Datoen i toppen (`.when`). Ukedag, dag og måned skal stå én gang, i den rekkefølgen i koden.
+2. Datoen i toppen (`.when`). Synlig tekst skal være «Torsdag 3. desember 2026», ukedag først, og den skal ikke gjentas i skjult tekst.
 3. Listen under `<!-- PROGRAM -->`
 4. Feltet Praktisk
 5. JSON-LD i `<head>` (`startDate` er dørene 18.30, `endDate`, `doorTime`, `subEvent`)
