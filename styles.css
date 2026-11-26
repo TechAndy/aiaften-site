@@ -91,18 +91,6 @@ a {
   top: 0.5rem;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 .wrap {
   width: min(1080px, calc(100% - 2rem));
   margin-inline: auto;
@@ -227,6 +215,13 @@ a {
   font-size: 0.95rem;
 }
 
+.button-large {
+  min-width: 15.5rem;
+  min-height: 3.75rem;
+  padding: 1rem 1.85rem;
+  font-size: 1.2rem;
+}
+
 .button-ghost {
   background: transparent;
   color: var(--navy);
@@ -243,11 +238,10 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.25rem 0 2.75rem;
+  padding: 1rem 0 2.5rem;
 }
 
 .hero-figure {
-  order: -1;
   margin: 0;
 }
 
@@ -295,54 +289,29 @@ h1 .place {
   line-height: 1.4;
 }
 
-.when {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 0.85rem;
-  row-gap: 0.1rem;
-  justify-content: start;
-  align-items: end;
-  width: max-content;
-  max-width: 100%;
-  margin: 1.35rem 0 0;
-  color: var(--navy);
+.audience {
+  margin: 0.9rem 0 0;
+  max-width: 38rem;
 }
 
-.when-day {
-  grid-column: 1;
-  grid-row: 1 / span 2;
+.when {
+  display: block;
+  margin: 1.15rem 0 0;
+  max-width: 100%;
+  color: var(--navy);
   font-family: var(--serif);
   font-weight: 560;
-  font-size: clamp(4.2rem, 14vw, 5.6rem);
-  line-height: 0.8;
-  letter-spacing: -0.03em;
-}
-
-.when-weekday {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: end;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.when-month {
-  grid-column: 2;
-  grid-row: 2;
-  font-family: var(--serif);
-  font-size: 1.45rem;
-  line-height: 1.1;
+  font-size: clamp(1.7rem, 4.6vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .quick {
   list-style: none;
-  margin: 1.35rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   display: grid;
-  gap: 0.65rem;
+  gap: 0.45rem;
 }
 
 .quick li {
@@ -362,13 +331,18 @@ h1 .place {
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 1.1rem;
+}
+
+.actions .button {
+  width: 100%;
 }
 
 .note {
-  margin: 0.8rem 0 0;
+  margin: 0.7rem 0 0;
   max-width: 36rem;
   color: var(--muted);
   font-size: 0.98rem;
@@ -432,10 +406,6 @@ h2 {
   margin: 0;
 }
 
-.after-program {
-  margin: 1.5rem 0 0;
-}
-
 .split {
   display: grid;
   gap: 2.5rem;
@@ -482,10 +452,31 @@ h2 {
   font-weight: 700;
 }
 
+.cta-band {
+  background: var(--navy);
+  color: #f6f3ee;
+  padding: 2.75rem 0;
+}
+
+.cta-band h2 {
+  color: #fff;
+}
+
+.cta-band p {
+  margin: 0.8rem 0 1.35rem;
+  max-width: 36rem;
+  color: #e4dccf;
+}
+
+.cta-band .button {
+  width: 100%;
+}
+
 .site-footer {
   background: var(--navy);
   color: #f6f3ee;
   padding: 2.5rem 0 1.5rem;
+  border-top: 1px solid rgba(176, 141, 87, 0.45);
 }
 
 .footer-grid {
@@ -554,6 +545,17 @@ h2 {
   .quick li {
     grid-template-columns: 6rem 1fr;
   }
+
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .actions .button,
+  .cta-band .button {
+    width: auto;
+  }
 }
 
 @media (min-width: 880px) {
@@ -571,10 +573,6 @@ h2 {
     gap: 3rem;
     align-items: start;
     padding: 3rem 0 4.25rem;
-  }
-
-  .hero-figure {
-    order: 0;
   }
 
   .section,
@@ -623,8 +621,14 @@ h2 {
     background: #fff;
   }
 
+  .cta-band,
   .site-footer {
     background: #fff;
+    color: #000;
+  }
+
+  .cta-band h2,
+  .cta-band p {
     color: #000;
   }
 }
